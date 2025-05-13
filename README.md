@@ -63,8 +63,8 @@ A comprehensive, production-ready Node.js Express TypeScript starter project wit
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
-cd express-typescript-starter
+git clone https://github.com/maulikatwork/Node-Express-TS-Starter-Boilerplate
+cd Node-Express-TS-Starter-Boilerplate
 ```
 
 2. **Install dependencies**

@@ -1,0 +1,186 @@
+{
+  "info": {
+    "name": "Node Express TypeScript API",
+    "description": "API collection for Node Express TypeScript Starter project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root",
+      "item": [
+        {
+          "name": "Root Endpoint",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            },
+            "description": "Application root endpoint with API information"
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "description": "Health check endpoint for monitoring application status"
+          }
+        },
+        {
+          "name": "Error Test",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/error",
+              "host": ["{{baseUrl}}"],
+              "path": ["error"]
+            },
+            "description": "Test endpoint for error handling"
+          }
+        }
+      ]
+    },
+    {
+      "name": "V1 - Base Module",
+      "item": [
+        {
+          "name": "Get All Resources",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/v1/base",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "base"]
+            },
+            "description": "Get all resources from the base module"
+          }
+        },
+        {
+          "name": "Get Resource By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/v1/base/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "base", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "Resource ID"
+                }
+              ]
+            },
+            "description": "Get a specific resource by ID"
+          }
+        },
+        {
+          "name": "Create Resource",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/v1/base",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "base"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sample Resource\",\n  \"description\": \"This is a sample resource description\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new resource"
+          }
+        },
+        {
+          "name": "Update Resource",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/v1/base/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "base", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "Resource ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Resource\",\n  \"description\": \"This is an updated resource description\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update an existing resource"
+          }
+        },
+        {
+          "name": "Delete Resource",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/v1/base/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "base", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "Resource ID"
+                }
+              ]
+            },
+            "description": "Delete a resource"
+          }
+        },
+        {
+          "name": "Template Endpoint",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/v1/base/template",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "base", "template"]
+            },
+            "description": "Template endpoint for demonstration purposes"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string",
+      "description": "API base URL"
+    }
+  ]
+}
